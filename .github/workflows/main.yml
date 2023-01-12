@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create New Relic deployment marker
-        uses: newrelic/deployment-marker-action@v1
+        uses: newrelic/deployment-marker-action@v10
         with:
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
@@ -19,5 +19,5 @@ jobs:
           # Optional
           changelog: "See https://github.com/${{ github.repository }}/blob/master/CHANGELOG.md for details"
           description: "Automated Deployment via Github Actions"
-          region: ${{ secrets.NEW_RELIC_REGIO }}
+          region: ${{ secrets.NEW_RELIC_REGION }}
           user: "${{ github.actor }}"
