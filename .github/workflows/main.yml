@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create New Relic deployment marker
-        uses: newrelic/deployment-marker-action@v11
+        uses: newrelic/deployment-marker-action@v10
         with:
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
