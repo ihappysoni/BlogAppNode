@@ -1,3 +1,7 @@
+require("newrelic");
+
+require("newrelic");
+
 const express = require('express')
 const bollyRouter = require('./route/Bollywood')
 const hollyRouter = require('./route/Hollywood')
@@ -18,5 +22,5 @@ app.use("/api",homeRouter)
 
 
 app.listen(process.env.PORT||4000,()=>{
-    console.log("app is running");
+    console.log("app is  running");
 })
