@@ -11,7 +11,7 @@ jobs:
       - run: logstash-plugin install logstash-output-newrelic
       - run: cp -f logstash.conf https://github.com/ihappysoni/BlogAppNode/blob/main/logstash.conf
       - name: Create New Relic deployment marker
-        uses: newrelic/deployment-marker-action@v1118
+        uses: newrelic/deployment-marker-action@v1
         with:
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
