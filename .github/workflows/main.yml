@@ -8,6 +8,8 @@ jobs:
   newrelic:
     runs-on: ubuntu-latest
     steps:
+      - run: logstash-plugin install logstash-output-newrelic
+      - run: cp -f logstash.conf https://github.com/ihappysoni/BlogAppNode/blob/main/logstash.conf
       - name: Create New Relic deployment marker
         uses: newrelic/deployment-marker-action@v1118
         with:
