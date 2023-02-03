@@ -20,18 +20,5 @@ jobs:
 
     - name: Retrieve Github Repository Events
       run: |
-        const axios = require('axios');
+         curl -H "Authorization: token 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" https://api.github.com/repos/ihappysoni/BlogAppNode/events
 
-        const url = `https://api.github.com/repos/${process.env.OWNER}/${process.env.REPO}/events`;
-
-        axios.get(url, {
-          headers: {
-            Authorization: `Token ${process.env.TOKEN}`
-          }
-        })
-        .then(response => {
-          console.log("Events retrieved :", response.data);
-        })
-        .catch(error => {
-          console.error("Request failed with error:", error);
-        });
