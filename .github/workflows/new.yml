@@ -8,7 +8,7 @@ on:
 env:
   OWNER: ihappysoni
   REPO: https://github.com/ihappysoni/BlogAppNode
-  TOKEN: ${{ secrets.TOKEN }}
+  TOKEN: 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
 
 jobs:
   retrieve-events:
@@ -30,7 +30,7 @@ jobs:
           }
         })
         .then(response => {
-          console.log("Events retrieved:", response.data);
+          console.log("Events retrieved :", response.data);
         })
         .catch(error => {
           console.error("Request failed with error:", error);
