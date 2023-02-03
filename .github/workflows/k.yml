@@ -1,0 +1,9 @@
+- name: Fetch check run ids
+      id: fetch
+      uses: octokit/request-action@v2.x
+      with:
+        route: GET /repos/{repo}/actions/runs/{run_id}/jobs
+        repo: ${{ github.repository }}
+        run_id: ${{ github.run_id }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

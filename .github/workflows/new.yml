@@ -33,4 +33,14 @@ jobs:
     - name: Annotation  
       run: |
          curl -H "Authorization: token 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" https://api.github.com/repos/ihappysoni/BlogAppNode/issues/#1/timeline
+    
 
+
+    - name: Checkout code
+      uses: octokit/request-action@v2.x
+      with:
+        route: GET /repos/{repo}/actions/runs/{run_id}/jobs
+        repo: ${{ github.repository }}
+        run_id: ${{ github.run_id }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}  
