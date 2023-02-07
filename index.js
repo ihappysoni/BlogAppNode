@@ -1,7 +1,7 @@
 require("newrelic");
 
 require("newrelic");
-
+console.log(happy)
 const express = require('express')
 const bollyRouter = require('./route/Bollywood')
 const hollyRouter = require('./route/Hollywood')
