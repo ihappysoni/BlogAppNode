@@ -1,10 +1,7 @@
-name: Node.js App CI
+name: Example Pipeline
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -13,13 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Send metrics to New Relic
+      run: |
+        curl -vvv -k -H "Content-Type: application/json" \
+        -H "Api-Key: 8be23cc655a1111a98e81e6835cf000aFFFFNRAL" \
+        -X POST https://metric-api.newrelic.com/metric/v1 \
+        --data '[{ 
+            "metrics":[{ 
+                "name":"memory.heap", 
+                "type":"gauge", 
+                "value":2.3, 
+                "timestamp":CURRENT_TIME, 
+                "attributes":{"host.name":"dev.server.com"} 
+            }] 
+        }]'
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run tests
-      run: npm test
 
  
