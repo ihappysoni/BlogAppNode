@@ -26,7 +26,7 @@ jobs:
         }]'
     - name: Programmatically retrieve NrIntegrationError events
       run: |
-        curl -H "Accept: application/json" -H "X-Query-Key:NRAK-0EZO21RRJYYZDN6J7G0LI2F8YK9" "https://insights-api.newrelic.com/v1/accounts/3660048/query?nrql=SELECT%20*%20FROM%20NrIntegrationError%20where%20newRelicFeature='Metrics'"    
+        curl -H "Accept: application/json" -H "X-Query-Key:8be23cc655a1111a98e81e6835cf000aFFFFNRAL" "https://insights-api.newrelic.com/v1/accounts/3660048/query?nrql=SELECT%20*%20FROM%20NrIntegrationError%20where%20newRelicFeature='Metrics'"    
 
 
  
