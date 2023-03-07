@@ -24,6 +24,9 @@ jobs:
                 "attributes":{"host.name":"dev.server.com"} 
             }] 
         }]'
+    - name: Programmatically retrieve NrIntegrationError events
+      run: |
+        curl -H "Accept: application/json" -H "X-Query-Key:8be23cc655a1111a98e81e6835cf000aFFFFNRAL" "https://insights-api.newrelic.com/v1/accounts/3660048/query?nrql=SELECT%20*%20FROM%20NrIntegrationError%20where%20newRelicFeature='Metrics'"    
 
 
  
